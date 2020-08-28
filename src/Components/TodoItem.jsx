@@ -2,27 +2,41 @@ import React from "react";
 import "../todoItem.css";
 import Delete from "./delete.jsx";
 import Pencil from "./pencil.jsx";
-
+import { v4 as uuidv4 } from "uuid";
+import Check from "./check";
+import Tick from "./tick";
 class todoItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      indexUpdate: -1,
       todo: "",
-      list: [],
+      list: [
+        { id: uuidv4(), title: "task 1", isCompleted: false },
+        { id: uuidv4(), title: "task 2", isCompleted: true },
+      ],
+      S,
     };
   }
+  onItemClicked(itemIndex, item) {
+    const { list } = this.state;
+    item.isCompleted = !item.isCompleted;
+    list.splice(itemIndex, 1, item);
+    this.setState({ list, todo: "" });
+  }
+
   handleDeleteText(itemIndex) {
     const { list } = this.state;
-    // const result = window.confirm("Are your sure to delete this task ?");
-    // if (result) {
-    list.splice(itemIndex, 1);
-    this.setState({ list, todo: "" });
+    const result = window.confirm("Are your sure to delete this task ?");
+    if (result) {
+      list.splice(itemIndex, 1);
+      this.setState({ list, todo: "" });
+    }
   }
   handleUpdateData(itemDelete) {
     const { list, todo, indexUpdate } = this.state;
+    const item = { id: uuidv4(), title: todo, isCompleted: false };
     console.log("------------", indexUpdate);
-    list.splice(indexUpdate, 1, todo);
+    list.splice(indexUpdate, 1, item);
     this.setState({ list, todo: "" });
   }
   handleEditText(itemEdit, index) {
@@ -35,11 +49,13 @@ class todoItem extends React.Component {
 
   pushlist() {
     const { list, todo } = this.state;
-    list.push(todo);
+    const item = { id: uuidv4(), title: todo, isCompleted: false };
+    list.push(item);
     this.setState({ list, todo: "" });
   }
   render() {
     const { list, todo } = this.state;
+    const item = { id: uuidv4(), title: todo, isCompleted: false };
     return (
       <div className="todoItemBackground">
         <div className="todoList">
@@ -50,12 +66,12 @@ class todoItem extends React.Component {
               <ul>
                 {list.map((item, index) => (
                   <li key={index}>
-                    {item}
+                    {item.title}
                     <div className="locate">
                       <button
                         type="button"
                         className="delete"
-                        onClick={() => this.handleEditText(item, index)}
+                        onClick={() => this.handleEditText(item.title, index)}
                       >
                         <Pencil />
                       </button>
@@ -65,6 +81,13 @@ class todoItem extends React.Component {
                         onClick={() => this.handleDeleteText(index)}
                       >
                         <Delete />
+                      </button>
+                      <button
+                        type="button"
+                        className="delete"
+                        onClick={() => this.onItemClicked(index, item)}
+                      >
+                        {item.isCompleted ? <Tick /> : <Check />}
                       </button>
                     </div>
                   </li>
