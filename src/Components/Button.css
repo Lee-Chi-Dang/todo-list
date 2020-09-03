@@ -1,0 +1,9 @@
+.Component-button button {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  width: 427px;
+  font-size: 75px;
+  height: 133px;
+  color: black;
+  text-align: center;
+}

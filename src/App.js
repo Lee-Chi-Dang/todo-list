@@ -1,15 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Counter from './Components/Counter';
-import TodoItem from './Components/TodoItem';
-import Clock from './Components/Clock';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Counter from "./Components/Counter";
+import TodoItem from "./Components/TodoItem";
+import Clock from "./Components/Clock";
+import Calculator from "./Components/Calculator";
 
 function App() {
   return (
     <>
-       <TodoItem/>
-       
+      <Calculator />
     </>
     // <div className="App">
     //   <header className="App-header">

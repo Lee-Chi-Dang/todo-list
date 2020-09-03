@@ -14,13 +14,12 @@ class todoItem extends React.Component {
         { id: uuidv4(), title: "task 1", isCompleted: false },
         { id: uuidv4(), title: "task 2", isCompleted: true },
       ],
-      S,
     };
   }
   onItemClicked(itemIndex, item) {
     const { list } = this.state;
     item.isCompleted = !item.isCompleted;
-    list.splice(itemIndex, 1, item);
+    //list.splice(itemIndex, 1, item);
     this.setState({ list, todo: "" });
   }
 
@@ -40,7 +39,6 @@ class todoItem extends React.Component {
     this.setState({ list, todo: "" });
   }
   handleEditText(itemEdit, index) {
-    const { list, todo } = this.state;
     this.setState({ todo: itemEdit, indexUpdate: index });
   }
   onChangeText(event) {

@@ -1,0 +1,44 @@
+.Calculatorbackground {
+  display: block;
+}
+/* .Calculatorbar {
+  background-color: #858694;
+  color: #fff;
+  font-weight: 200px;
+  width: 100%;
+  font-size: 125px;
+  text-align: right;
+} */
+.rowbackgr {
+  display: flex;
+  width: 100%;
+  height: 133px;
+  text-align: center;
+}
+.Component-button button {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  width: 427px;
+  font-size: 75px;
+  height: 133px;
+  color: black;
+  text-align: center;
+}
+.Component-button-orange button {
+  background-color: #f5923e;
+  color: #fff;
+  width: 427px;
+  height: 133px;
+  font-size: 75px;
+  cursor: pointer;
+  text-align: center;
+}
+.Component-button0 button {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  width: 854px;
+  font-size: 75px;
+  height: 133px;
+  color: black;
+  text-align: center;
+}
