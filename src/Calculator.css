@@ -18,7 +18,7 @@
 .Component-button button {
   background-color: #e0e0e0;
   cursor: pointer;
-  width: 427px;
+  width: 426.5px;
   font-size: 75px;
   height: 133px;
   color: black;
@@ -27,7 +27,7 @@
 .Component-button-orange button {
   background-color: #f5923e;
   color: #fff;
-  width: 427px;
+  width: 426.5px;
   height: 133px;
   font-size: 75px;
   cursor: pointer;
@@ -36,7 +36,7 @@
 .Component-button0 button {
   background-color: #e0e0e0;
   cursor: pointer;
-  width: 854px;
+  width: 853px;
   font-size: 75px;
   height: 133px;
   color: black;

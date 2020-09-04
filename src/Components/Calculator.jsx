@@ -59,10 +59,6 @@ class Calculator extends React.Component {
       this.setState({ input1: "" });
       console.log(result);
     }
-    //   if (operation === "%") {
-    //     const result = parseInt(input) / 100;
-    //     this.setState({ input: result });
-    //   }
   }
 
   showinput() {
