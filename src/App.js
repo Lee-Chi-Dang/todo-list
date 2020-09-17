@@ -5,11 +5,14 @@ import Counter from "./Components/Counter";
 import TodoItem from "./Components/TodoItem";
 import Clock from "./Components/Clock";
 import Calculator from "./Components/Calculator";
-
+import GiaiPT from "./Components/GiaiPT";
+import Item from "./Components/Item";
+import Tictactoe from "./Components/Tictactoe";
+import todoItem from "./Components/TodoItem";
 function App() {
   return (
     <>
-      <Calculator />
+      <Tictactoe />
     </>
     // <div className="App">
     //   <header className="App-header">

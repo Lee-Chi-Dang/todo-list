@@ -1,0 +1,31 @@
+.background {
+  display: flex;
+  background-color: wheat;
+  width: 345px;
+  height: 350px;
+  margin-left: 650px;
+  border: 1px solid white;
+  flex-wrap: wrap;
+}
+button {
+  display: inline-flex;
+  width: 31%;
+  height: 112px;
+  background-color: white;
+  box-shadow: 10px 10px 5px 0 rgba(200, 200, 215, 0.55);
+  margin: 0 5px 0 0;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  font-size: 90px;
+}
+.p1 {
+  display: inline-block;
+  width: 200px;
+  margin-left: 100px;
+  color: red;
+  background-color: greenyellow;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  font-size: 50px;
+}

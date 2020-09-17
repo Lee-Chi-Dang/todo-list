@@ -40,9 +40,9 @@ li {
   color: black;
   padding: 10px 30px;
   text-decoration: none;
-  margin-top: 10px;
-  border: 1px solid blanchedalmond;
-  background-color: blanchedalmond;
+  margin-top: 0px;
+  border: 1px solid white;
+  background-color: white;
 }
 
 .update {

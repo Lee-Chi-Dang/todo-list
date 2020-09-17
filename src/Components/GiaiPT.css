@@ -1,0 +1,30 @@
+.background {
+  height: 100px;
+  width: 500px;
+  border: 1px solid black;
+  display: inline-block;
+}
+h1 {
+  display: inline;
+  margin-left: 50px;
+}
+button {
+  display: block;
+  width: 200px;
+  height: 50px;
+  background-color: #00ff00;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: 200px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+input {
+  font-size: 30px;
+  background-color: #c0c0c0;
+  margin-left: 100px;
+}
+p {
+  font-size: 30px;
+  display: inline;
+}

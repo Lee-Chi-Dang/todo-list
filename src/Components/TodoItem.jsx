@@ -25,7 +25,7 @@ class todoItem extends React.Component {
 
   handleDeleteText(itemIndex) {
     const { list } = this.state;
-    const result = window.confirm("Are your sure to delete this task ?");
+    const result = window.confirm("Are you sure to delete this task ?");
     if (result) {
       list.splice(itemIndex, 1);
       this.setState({ list, todo: "" });
@@ -34,7 +34,7 @@ class todoItem extends React.Component {
   handleUpdateData(itemDelete) {
     const { list, todo, indexUpdate } = this.state;
     const item = { id: uuidv4(), title: todo, isCompleted: false };
-    console.log("------------", indexUpdate);
+    // console.log("------------", indexUpdate);
     list.splice(indexUpdate, 1, item);
     this.setState({ list, todo: "" });
   }
