@@ -1,81 +1,111 @@
 import React from "react";
 import "./Tictactoe.css";
-import { array } from "prop-types";
+import { array, string } from "prop-types";
 
 class Tictactoe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: "",
       isCompleted: true,
       obj: {},
+      win: "",
+      choose: "",
+      isCompleted1: false,
     };
   }
 
   X_O(index) {
-    const { isCompleted, obj } = this.state;
-    if (obj[index] === undefined) {
-      obj[index] = isCompleted;
-      this.setState({ isCompleted: !isCompleted, obj });
+    const { isCompleted, obj, win, choose, isCompleted1 } = this.state;
+    // this.checkWin(obj);
+    if (obj[index] === undefined && win.length === 0) {
+      if (choose === "X") {
+        obj[index] = isCompleted;
+        this.checkWin(obj);
+        this.setState({ isCompleted: !isCompleted, obj });
+      } else {
+        obj[index] = isCompleted1;
+        this.checkWin(obj);
+        this.setState({ isCompleted1: !isCompleted1, obj });
+      }
     }
-    console.log(isCompleted);
+
+    console.log(win);
+    console.log(isCompleted1);
     console.log(obj);
     console.log(Object.values(obj).length);
   }
   display(index) {
-    const { obj } = this.state;
+    const { obj, choose } = this.state;
     if (obj[index] === undefined) {
       return " ";
     }
-    if (obj[index] === true) {
-      return "X";
+    if (choose === "X") {
+      if (obj[index] === true) {
+        return "X";
+      }
+      if (obj[index] === false) {
+        return "O";
+      }
+    } else if (choose === "O") {
+      if (obj[index] === false) {
+        return "O";
+      }
+      if (obj[index] === true) {
+        return "X";
+      }
     }
-    if (obj[index] === false) {
-      return "O";
-    }
+  }
+  chooseX() {
+    this.setState({ choose: "X" });
+  }
+  chooseO() {
+    this.setState({ choose: "O" });
   }
   restart() {
     this.setState({
       isCompleted: true,
       obj: {},
+      win: "",
+      isCompleted1: false,
+      choose: "",
     });
   }
-  checkWin() {
-    const { obj, isCompleted } = this.state;
+  checkWin(obj) {
     const arrNum = Object.values(obj).length;
-    // for (arrNum = 5; arrNum <= 9; arrNum++) {
     if (obj[1] === true && obj[2] === true && obj[3] === true) {
-      return "X is Win";
+      this.setState({ win: "X is Win" });
     } else if (obj[1] === false && obj[2] === false && obj[3] === false) {
-      return "O is Win";
+      this.setState({ win: "O is Win" });
     } else if (obj[4] === true && obj[5] === true && obj[6] === true) {
-      return "X is Win";
+      this.setState({ win: "X is Win" });
     } else if (obj[4] === false && obj[5] === false && obj[6] === false) {
-      return "O is Win";
+      this.setState({ win: "O is Win" });
     } else if (obj[7] === true && obj[8] === true && obj[9] === true) {
-      return "X is Win";
+      this.setState({ win: "X is Win" });
     } else if (obj[7] === false && obj[8] === false && obj[9] === false) {
-      return "O is Win";
+      this.setState({ win: "O is Win" });
     } else if (obj[1] === true && obj[4] === true && obj[7] === true) {
-      return "X is Win";
+      this.setState({ win: "X is Win" });
     } else if (obj[1] === false && obj[4] === false && obj[7] === false) {
-      return "O is Win";
+      this.setState({ win: "O is Win" });
     } else if (obj[2] === true && obj[5] === true && obj[8] === true) {
-      return "X is Win";
+      this.setState({ win: "X is Win" });
     } else if (obj[2] === false && obj[5] === false && obj[8] === false) {
-      return "O is Win";
+      this.setState({ win: "O is Win" });
     } else if (obj[3] === true && obj[6] === true && obj[9] === true) {
-      return "X is Win";
+      this.setState({ win: "X is Win" });
     } else if (obj[3] === false && obj[6] === false && obj[9] === false) {
-      return "O is Win";
+      this.setState({ win: "O is Win" });
     } else if (obj[1] === true && obj[5] === true && obj[9] === true) {
-      return "X is Win";
+      this.setState({ win: "X is Win" });
     } else if (obj[1] === false && obj[5] === false && obj[9] === false) {
-      return "O is Win";
+      this.setState({ win: "O is Win" });
     } else if (obj[3] === true && obj[5] === true && obj[7] === true) {
-      return "X is Win";
+      this.setState({ win: "X is Win" });
     } else if (obj[3] === false && obj[5] === false && obj[7] === false) {
-      return "O is Win";
+      this.setState({ win: "O is Win" });
+    } else if (arrNum === 9) {
+      this.setState({ win: "Draw" });
     }
   }
   render() {
@@ -94,7 +124,14 @@ class Tictactoe extends React.Component {
         </div>
         <button onClick={() => this.restart()}>restart</button>
         {/* <button onClick={() => this.checkWin()}>check</button> */}
-        <p className="p1">{this.checkWin()}</p>
+        <p className="p1">{this.state.win}</p>
+        <p>Please choose who start ?</p>
+        <button className="button1" onClick={() => this.chooseX()}>
+          X
+        </button>
+        <button className="button1" onClick={() => this.chooseO()}>
+          O
+        </button>
       </div>
     );
   }

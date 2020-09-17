@@ -25,7 +25,13 @@ button {
   margin-left: 100px;
   color: red;
   background-color: greenyellow;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: sans-serif;
   text-align: center;
   font-size: 50px;
+}
+.button1 {
+  display: inline-block;
+  height: 115px;
+  width: 115px;
+  margin-left: 20px;
 }
